@@ -17,8 +17,8 @@
 //
 
 require_once 'Image/Color.php';
-require_once 'Image/GIS/Parser.php';
-require_once 'Image/GIS/Renderer.php';
+require_once 'Image/GIS2/Parser.php';
+require_once 'Image/GIS2/Renderer.php';
 
 /**
  * The following example draws the region around the
@@ -26,10 +26,10 @@ require_once 'Image/GIS/Renderer.php';
  *
  * <code>
  * <?php
- * require_once 'Image/GIS.php';
+ * require_once 'Image/GIS2.php';
  *
  * // Create new map.
- * $map = new Image_GIS(
+ * $map = new Image_GIS2(
  *   array(
  *     'width'  =>  960,
  *     'height' => 1280,
@@ -62,9 +62,9 @@ require_once 'Image/GIS/Renderer.php';
  * @copyright   Copyright &copy; 2002-2004 Jan Kneschke <jan@kneschke.de> and Sebastian Bergmann <sb@sebastian-bergmann.de>
  * @license     http://www.php.net/license/3_0.txt The PHP License, Version 3.0
  * @category    Image
- * @package     Image_GIS
+ * @package     Image_GIS2
  */
-class Image_GIS {
+class Image_GIS2 {
     /**
     * Set to TRUE to enable debugging.
     *
@@ -73,16 +73,16 @@ class Image_GIS {
     private $debug;
 
     /**
-    * Image_GIS_Parser sub-class object.
+    * Image_GIS2_Parser sub-class object.
     *
-    * @var Image_GIS_Parser $parser
+    * @var Image_GIS2_Parser $parser
     */
     private $parser;
 
     /**
-    * Image_GIS_Renderer sub-class object.
+    * Image_GIS2_Renderer sub-class object.
     *
-    * @var Image_GIS_Renderer $renderer
+    * @var Image_GIS2_Renderer $renderer
     */
     private $renderer;
 
@@ -137,7 +137,6 @@ class Image_GIS {
     *
     * @return array
     * @access public
-    * @since  Image_GIS 1.0.1
     */
     public function getRange() {
         return $this->renderer->getRange();
@@ -166,7 +165,7 @@ class Image_GIS {
     }
 
     /**
-    * Sets the Image_GIS_Parser sub-class to be used
+    * Sets the Image_GIS2_Parser sub-class to be used
     * to parse a data file.
     *
     * @param  string  $parser
@@ -174,7 +173,7 @@ class Image_GIS {
     * @access public
     */
     public function setParser($parser, $cache) {
-        $this->parser = Image_GIS_Parser::factory($parser, $cache, $this->debug);
+        $this->parser = Image_GIS2_Parser::factory($parser, $cache, $this->debug);
     }
 
     /**
@@ -191,14 +190,14 @@ class Image_GIS {
     }
 
     /**
-    * Sets the Image_GIS_Renderer sub-class to be used
+    * Sets the Image_GIS2_Renderer sub-class to be used
     * to render an image.
     *
     * @param  string  $renderer
     * @access public
     */
     public function setRenderer($renderer, $width, $height) {
-        $this->renderer = Image_GIS_Renderer::factory($renderer, $width, $height, $this->debug);
+        $this->renderer = Image_GIS2_Renderer::factory($renderer, $width, $height, $this->debug);
     }
 
     /**

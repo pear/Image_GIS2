@@ -16,8 +16,8 @@
 // $Id$
 //
 
-require_once 'Image/GIS/LineSet.php';
-require_once 'Image/GIS/Parser.php';
+require_once 'Image/GIS2/LineSet.php';
+require_once 'Image/GIS2/Parser.php';
 
 /**
  * E00 Parser.
@@ -27,9 +27,9 @@ require_once 'Image/GIS/Parser.php';
  * @copyright   Copyright &copy; 2002-2004 Jan Kneschke <jan@kneschke.de> and Sebastian Bergmann <sb@sebastian-bergmann.de>
  * @license     http://www.php.net/license/3_0.txt The PHP License, Version 3.0
  * @category    Image
- * @package     Image_GIS
+ * @package     Image_GIS2
  */
-class Image_GIS_Parser_E00 extends Image_GIS_Parser {
+class Image_GIS2_Parser_E00 extends Image_GIS2_Parser {
     /**
     * Constructor.
     *
@@ -37,8 +37,8 @@ class Image_GIS_Parser_E00 extends Image_GIS_Parser {
     * @param  boolean $debug
     * @access public
     */
-    public function Image_GIS_Parser_E00($cache, $debug) {
-        $this->Image_GIS_Parser($cache, $debug);
+    public function Image_GIS2_Parser_E00($cache, $debug) {
+        $this->Image_GIS2_Parser($cache, $debug);
     }
 
     /**
@@ -50,7 +50,7 @@ class Image_GIS_Parser_E00 extends Image_GIS_Parser {
     * @access public
     */
     public function parseFile($dataFile, $color) {
-        $lineSet = new Image_GIS_LineSet($color);
+        $lineSet = new Image_GIS2_LineSet($color);
 
         if ($fp = @fopen($dataFile, 'r')) {
             $numRecords = 0;

@@ -23,9 +23,9 @@
  * @copyright   Copyright &copy; 2002-2004 Jan Kneschke <jan@kneschke.de> and Sebastian Bergmann <sb@sebastian-bergmann.de>
  * @license     http://www.php.net/license/3_0.txt The PHP License, Version 3.0
  * @category    Image
- * @package     Image_GIS
+ * @package     Image_GIS2
  */
-class Image_GIS_LineSet {
+class Image_GIS2_LineSet {
     /**
     * @var array $color
     */
@@ -58,7 +58,7 @@ class Image_GIS_LineSet {
     * @param  string $color
     * @access public
     */
-    public function Image_GIS_LineSet($color = 'black') {
+    public function Image_GIS2_LineSet($color = 'black') {
         $this->color = $color;
     }
 

@@ -17,7 +17,7 @@
 //
 
 require_once 'Cache/Lite.php';
-require_once 'Image/GIS/LineSet.php';
+require_once 'Image/GIS2/LineSet.php';
 
 /**
  * Parser Base Class.
@@ -26,9 +26,9 @@ require_once 'Image/GIS/LineSet.php';
  * @copyright   Copyright &copy; 2002-2004 Jan Kneschke <jan@kneschke.de> and Sebastian Bergmann <sb@sebastian-bergmann.de>
  * @license     http://www.php.net/license/3_0.txt The PHP License, Version 3.0
  * @category    Image
- * @package     Image_GIS
+ * @package     Image_GIS2
  */
-abstract class Image_GIS_Parser {
+abstract class Image_GIS2_Parser {
     /**
     * Cache.
     *
@@ -64,7 +64,7 @@ abstract class Image_GIS_Parser {
     * @param  boolean $debug
     * @access public
     */
-    public function Image_GIS_Parser($cache, $debug) {
+    public function Image_GIS2_Parser($cache, $debug) {
         if ($cache) {
             $this->cache = new Cache_Lite;
         }
@@ -82,9 +82,9 @@ abstract class Image_GIS_Parser {
     * @access public
     */
     public static function factory($parser, $cache, $debug) {
-        include_once 'Image/GIS/Parser/' . $parser . '.php';
+        include_once 'Image/GIS2/Parser/' . $parser . '.php';
 
-        $class  = 'Image_GIS_Parser_' . $parser;
+        $class  = 'Image_GIS2_Parser_' . $parser;
         $object = new $class($cache, $debug);
 
         return $object;

@@ -40,7 +40,7 @@ produce images using GD or Scalable Vector Graphics (SVG).
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Image">
-        <dir name="GIS">
+        <dir name="GIS2">
           <dir name="Parser">
             <file role="php" name="E00.php"/>
           </dir>
@@ -65,45 +65,4 @@ produce images using GD or Scalable Vector Graphics (SVG).
       <dep type="pkg" rel="has">XML_SVG</dep>
     </deps>
   </release>
-  <changelog>
-    <release>
-      <version>1.1.0</version>
-      <state>stable</state>
-      <date>2004-01-06</date>
-      <notes>
-<![CDATA[
-+ Added caching of parsed data files.
-
-+ Added getRange() method to the Image_GIS and Image_GIS_Renderer
-  classes.
-
-* Changed the Image_GIS constructor to accept an associative
-  parameter array as its only argument.
-
-  Note: This breaks backwards compatibility.
-
-* The SVG renderer now uses the XML_SVG package instead of the
-  XML_Tree package.
-
-* Factored the handling of Line Sets out into a separate class.
-
-* Fixed handling of negative coordinates.
-
-* Fixed a bug that kept a debugging message from beeing printed.
-
-* Fixed incompatibilities with PHP 5.
-]]>
-      </notes>
-    </release>
-    <release>
-      <version>1.0.0</version>
-      <state>stable</state>
-      <date>2002-12-30</date>
-      <notes>
-<![CDATA[
-* Initial release.
-]]>
-      </notes>
-    </release>
-  </changelog>
 </package>

@@ -1,7 +1,7 @@
 <?php
 //
 // +------------------------------------------------------------------------+
-// | PEAR :: Image :: GIS :: SVG Renderer                                   |
+// | PEAR :: Image :: GIS :: GD Renderer                                    |
 // +------------------------------------------------------------------------+
 // | Copyright (c) 2002-2004 Jan Kneschke <jan@kneschke.de> and             |
 // |                         Sebastian Bergmann <sb@sebastian-bergmann.de>. |
@@ -16,32 +16,32 @@
 // $Id$
 //
 
-require_once 'Image/GIS/Renderer.php';
-require_once 'XML/SVG.php';
+require_once 'Image/GIS2/Renderer.php';
 
 /**
- * SVG Renderer.
+ * GD Renderer.
  *
+ * @author      Jan Kneschke <jan@kneschke.de>
  * @author      Sebastian Bergmann <sb@sebastian-bergmann.de>
  * @copyright   Copyright &copy; 2002-2004 Jan Kneschke <jan@kneschke.de> and Sebastian Bergmann <sb@sebastian-bergmann.de>
  * @license     http://www.php.net/license/3_0.txt The PHP License, Version 3.0
  * @category    Image
- * @package     Image_GIS
+ * @package     Image_GIS2
  */
-class Image_GIS_Renderer_SVG extends Image_GIS_Renderer {
+class Image_GIS2_Renderer_GD extends Image_GIS2_Renderer {
     /**
-    * SVG Document.
+    * GD Image Ressource.
     *
-    * @var XML_SVG $svg
+    * @var ressource $image
     */
-    private $svg;
+    private $image;
 
     /**
-    * SVG Groups.
+    * GD Image Palette.
     *
-    * @var XML_SVG_Group[]
+    * @var array $palette
     */
-    private $svgGroups = array();
+    private $palette = array();
 
     /**
     * Constructor.
@@ -52,14 +52,18 @@ class Image_GIS_Renderer_SVG extends Image_GIS_Renderer {
     * @access public
     */
     public function __construct($width, $height, $debug) {
-        $this->Image_GIS_Renderer($width, $height, $debug);
+        if (is_file($width)) {
+            $this->image = imagecreatefrompng($width);
 
-        $this->svg = new XML_SVG_Document(
-          array(
-            'width'  => $width,
-            'height' => $height
-          )
-        );
+            $width  = imagesx($this->image);
+            $height = imagesy($this->image);
+        } else {
+            $this->image = imagecreate($this->width, $this->height);
+
+            imagecolorallocate($this->image, 255, 255, 255);
+        }
+
+        $this->Image_GIS2_Renderer($width, $height, $debug);
     }
 
     /**
@@ -76,34 +80,18 @@ class Image_GIS_Renderer_SVG extends Image_GIS_Renderer {
     * @access public
     */
     public function drawLine($x1, $y1, $x2, $y2, $r, $g, $b) {
-        $group = md5($r . $g . $b);
-
-        if (!isset($this->svgGroups[$group])) {
-            $this->svgGroups[$group] = new XML_SVG_Group(
-              array(
-                'style' => sprintf(
-                  'stroke:rgb(%s, %s, %s)',
-
-                  $r,
-                  $g,
-                  $b
-                )
-              )
-            );
-
-            $this->svgGroups[$group]->addParent($this->svg);
+        if (!isset($this->palette[$r][$g][$b])) {
+            $this->palette[$r][$g][$b] = imagecolorallocate($this->image, $r, $g, $b);
         }
 
-        $line = new XML_SVG_Line(
-          array(
-            'x1'    => $x1,
-            'y1'    => $y1,
-            'x2'    => $x2,
-            'y2'    => $y2,
-          )
+        imageline(
+          $this->image,
+          $x1,
+          $y1,
+          $x2,
+          $y2,
+          $this->palette[$r][$g][$b]
         );
-
-        $this->svgGroups[$group]->addChild($line);
     }
 
     /**
@@ -114,14 +102,7 @@ class Image_GIS_Renderer_SVG extends Image_GIS_Renderer {
     * @access public
     */
     public function saveImage($filename) {
-        if ($fp = @fopen($filename, 'w')) {
-            @fputs($fp, $this->svg->bufferObject());
-            @fclose($fp);
-
-            return true;
-        }
-
-        return false;
+        return imagepng($this->image, $filename);
     }
 
     /**
@@ -130,7 +111,8 @@ class Image_GIS_Renderer_SVG extends Image_GIS_Renderer {
     * @access public
     */
     public function showImage() {
-        $this->svg->printElement();
+        header('Content-Type: image/png');
+        imagepng($this->image);
     }
 }
 ?>

@@ -26,10 +26,10 @@ require_once 'Image/Color.php';
  * @copyright   Copyright &copy; 2002-2004 Jan Kneschke <jan@kneschke.de> and Sebastian Bergmann <sb@sebastian-bergmann.de>
  * @license     http://www.php.net/license/3_0.txt The PHP License, Version 3.0
  * @category    Image
- * @package     Image_GIS
+ * @package     Image_GIS2
  * @abstract
  */
-abstract class Image_GIS_Renderer {
+abstract class Image_GIS2_Renderer {
     /**
     * Set to TRUE to enable debugging.
     *
@@ -69,7 +69,7 @@ abstract class Image_GIS_Renderer {
     * @param  boolean $debug
     * @access public
     */
-    public function Image_GIS_Renderer($width, $height, $debug) {
+    public function Image_GIS2_Renderer($width, $height, $debug) {
         $this->debug  = $debug;
 
         if ($width < 0 ||
@@ -97,8 +97,8 @@ abstract class Image_GIS_Renderer {
     * @access public
     */
     public static function factory($renderer, $width, $height, $debug) {
-        if (@include_once('Image/GIS/Renderer/' . $renderer . '.php')) {
-            $class  = 'Image_GIS_Renderer_' . $renderer;
+        if (@include_once('Image/GIS2/Renderer/' . $renderer . '.php')) {
+            $class  = 'Image_GIS2_Renderer_' . $renderer;
             $object = new $class($width, $height, $debug);
 
             return $object;
@@ -154,7 +154,6 @@ abstract class Image_GIS_Renderer {
     *
     * @return array
     * @access public
-    * @since  Image_GIS 1.0.1
     */
     public function getRange() {
         return array(
