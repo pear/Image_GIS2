@@ -39,18 +39,12 @@ class Image_GIS2_LineSet {
     /**
     * @var array $min
     */
-    public $min = array(
-      'x' => 0,
-      'y' => 0
-    );
+    public $min = false;
 
     /**
     * @var array $max
     */
-    public $max = array(
-      'x' => 0,
-      'y' => 0
-    );
+    public $max = false;
 
     /**
     * Constructor.
@@ -74,10 +68,17 @@ class Image_GIS2_LineSet {
     public function addLine($x1, $y1, $x2, $y2) {
         $this->lines[] = array($x1, $y1, $x2, $y2);
 
-        $this->min['x'] = min($this->min['x'], $x1, $x2);
-        $this->min['y'] = min($this->min['y'], $y1, $y2);
-        $this->max['x'] = max($this->max['x'], $x1, $x2);
-        $this->max['y'] = max($this->max['y'], $y1, $y2);
+        if ($this->min == false) {
+            $this->min['x'] = min($x1, $x2);
+            $this->min['y'] = min($y1, $y2);
+            $this->max['x'] = max($x1, $x2);
+            $this->max['y'] = max($y1, $y2);
+        } else {
+            $this->min['x'] = min($this->min['x'], $x1, $x2);
+            $this->min['y'] = min($this->min['y'], $y1, $y2);
+            $this->max['x'] = max($this->max['x'], $x1, $x2);
+            $this->max['y'] = max($this->max['y'], $y1, $y2);
+        }
     }
 }
 ?>
