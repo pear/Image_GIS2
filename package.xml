@@ -55,7 +55,7 @@ produce images using GD or Scalable Vector Graphics (SVG).
           <file role="php" name="Renderer.php"/>
         </dir>
 
-        <file role="php" name="GIS.php"/>
+        <file role="php" name="GIS2.php"/>
       </dir>
     </filelist>
     <deps>
