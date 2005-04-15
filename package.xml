@@ -14,12 +14,6 @@ produce images using GD or Scalable Vector Graphics (SVG).
   </description>
   <maintainers>
     <maintainer>
-      <user>sebastian</user>
-      <role>lead</role>
-      <name>Sebastian Bergmann</name>
-      <email>sb@sebastian-bergmann.de</email>
-    </maintainer>
-    <maintainer>
       <user>ostborn</user>
       <role>lead</role>
       <name>Jan Kneschke</name>
