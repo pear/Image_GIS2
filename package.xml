@@ -17,14 +17,14 @@ produce images using GD or Scalable Vector Graphics (SVG).</description>
   <active>yes</active>
  </lead>
  <date>2012-05-14</date>
- <time>21:06:03</time>
+ <time>21:11:55</time>
  <version>
-  <release>2.0.0</release>
-  <api>2.0.0</api>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>beta</release>
+  <api>beta</api>
  </stability>
  <license uri="http://www.php.net/license">PHP License</license>
  <notes>
@@ -34,7 +34,7 @@ produce images using GD or Scalable Vector Graphics (SVG).</description>
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="b583813ec0dcfd146b9f561e4a4b70de" name="Image/GIS2.php" role="php" />
+   <file baseinstalldir="/" md5sum="7736202de7e9b819aaae196ab9994a47" name="Image/GIS2.php" role="php" />
    <file baseinstalldir="/" md5sum="293294d1124884858e376820599be1ac" name="Image/GIS2/LineSet.php" role="php" />
    <file baseinstalldir="/" md5sum="39fe09bb543c6a466d08a6cf5fbd8f79" name="Image/GIS2/Parser.php" role="php" />
    <file baseinstalldir="/" md5sum="b3ec44f5e70af77273a6e7819a39799a" name="Image/GIS2/Renderer.php" role="php" />
@@ -72,12 +72,12 @@ produce images using GD or Scalable Vector Graphics (SVG).</description>
  <changelog>
   <release>
    <version>
-    <release>2.0.0</release>
-    <api>2.0.0</api>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
    </version>
    <stability>
-    <release>stable</release>
-    <api>stable</api>
+    <release>beta</release>
+    <api>beta</api>
    </stability>
    <date>2012-05-14</date>
    <license uri="http://www.php.net/license">PHP License</license>
