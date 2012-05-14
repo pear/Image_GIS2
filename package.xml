@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
-http://pear.php.net/dtd/tasks-1.0.xsd
-http://pear.php.net/dtd/package-2.0
-http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>Image_GIS2</name>
  <channel>pear.php.net</channel>
  <summary>Visualization of GIS data.</summary>
@@ -12,9 +9,7 @@ But you can generate your own maps based on raw, digital data files
 which are available for free on the net.
 This package provides a parser for the most common format for
 geographical data, the Arcinfo/E00 format as well as renderers to
-produce images using GD or Scalable Vector Graphics (SVG).
-  
- </description>
+produce images using GD or Scalable Vector Graphics (SVG).</description>
  <lead>
   <name>Jan Kneschke</name>
   <user>ostborn</user>
@@ -22,7 +17,7 @@ produce images using GD or Scalable Vector Graphics (SVG).
   <active>yes</active>
  </lead>
  <date>2012-05-14</date>
- <time>12:05:06</time>
+ <time>21:06:03</time>
  <version>
   <release>2.0.0</release>
   <api>2.0.0</api>
@@ -38,21 +33,15 @@ produce images using GD or Scalable Vector Graphics (SVG).
 ! PHP 5.0.0 (or higher) is now required.
  </notes>
  <contents>
-  <dir name="/">
-   <dir name="GIS2">
-    <dir name="Parser">
-     <file baseinstalldir="Image" name="E00.php" role="php" />
-    </dir> <!-- //GIS2/Parser -->
-    <dir name="Renderer">
-     <file baseinstalldir="Image" name="GD.php" role="php" />
-     <file baseinstalldir="Image" name="SVG.php" role="php" />
-    </dir> <!-- //GIS2/Renderer -->
-    <file baseinstalldir="Image" name="LineSet.php" role="php" />
-    <file baseinstalldir="Image" name="Parser.php" role="php" />
-    <file baseinstalldir="Image" name="Renderer.php" role="php" />
-   </dir> <!-- //GIS2 -->
-   <file baseinstalldir="Image" name="GIS2.php" role="php" />
-  </dir> <!-- / -->
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" md5sum="b583813ec0dcfd146b9f561e4a4b70de" name="Image/GIS2.php" role="php" />
+   <file baseinstalldir="/" md5sum="293294d1124884858e376820599be1ac" name="Image/GIS2/LineSet.php" role="php" />
+   <file baseinstalldir="/" md5sum="39fe09bb543c6a466d08a6cf5fbd8f79" name="Image/GIS2/Parser.php" role="php" />
+   <file baseinstalldir="/" md5sum="b3ec44f5e70af77273a6e7819a39799a" name="Image/GIS2/Renderer.php" role="php" />
+   <file baseinstalldir="/" md5sum="4def8064072665ea67c06b967835b02f" name="Image/GIS2/Parser/E00.php" role="php" />
+   <file baseinstalldir="/" md5sum="12284a42da754ae380e66bc3b2e2ace1" name="Image/GIS2/Renderer/GD.php" role="php" />
+   <file baseinstalldir="/" md5sum="673aa75bccfc41e95d7214ef4dba776b" name="Image/GIS2/Renderer/SVG.php" role="php" />
+  </dir>
  </contents>
  <dependencies>
   <required>
@@ -80,4 +69,23 @@ produce images using GD or Scalable Vector Graphics (SVG).
   </required>
  </dependencies>
  <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>2.0.0</release>
+    <api>2.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-05-14</date>
+   <license uri="http://www.php.net/license">PHP License</license>
+   <notes>
+* Refactored using PHP 5 syntax.
+
+! PHP 5.0.0 (or higher) is now required.
+   </notes>
+  </release>
+ </changelog>
 </package>
