@@ -1,62 +1,83 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
-<package version="1.0">
-  <name>Image_GIS2</name>
-  <summary>Visualization of GIS data.</summary>
-  <description>
-Generating maps on demand can be a hard job as most often you don't
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Image_GIS2</name>
+ <channel>pear.php.net</channel>
+ <summary>Visualization of GIS data.</summary>
+ <description>Generating maps on demand can be a hard job as most often you don&apos;t
 have the maps you need in digital form.
 But you can generate your own maps based on raw, digital data files
 which are available for free on the net.
 This package provides a parser for the most common format for
 geographical data, the Arcinfo/E00 format as well as renderers to
 produce images using GD or Scalable Vector Graphics (SVG).
-  </description>
-  <maintainers>
-    <maintainer>
-      <user>ostborn</user>
-      <role>lead</role>
-      <name>Jan Kneschke</name>
-      <email>jan@kneschke.de</email>
-    </maintainer>
-  </maintainers>
-  <license>PHP License</license>
-  <release>
-    <version>2.0.0</version>
-    <state>stable</state>
-    <date>2004-MM-DD</date>
-    <notes>
-<![CDATA[
+  
+ </description>
+ <lead>
+  <name>Jan Kneschke</name>
+  <user>ostborn</user>
+  <email>jan@kneschke.de</email>
+  <active>yes</active>
+ </lead>
+ <date>2012-05-14</date>
+ <time>12:05:06</time>
+ <version>
+  <release>2.0.0</release>
+  <api>2.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.php.net/license">PHP License</license>
+ <notes>
 * Refactored using PHP 5 syntax.
 
 ! PHP 5.0.0 (or higher) is now required.
-]]>
-    </notes>
-    <filelist>
-      <dir name="/" baseinstalldir="Image">
-        <dir name="GIS2">
-          <dir name="Parser">
-            <file role="php" name="E00.php"/>
-          </dir>
-
-          <dir name="Renderer">
-            <file role="php" name="GD.php"/>
-            <file role="php" name="SVG.php"/>
-          </dir>
-
-          <file role="php" name="LineSet.php"/>
-          <file role="php" name="Parser.php"/>
-          <file role="php" name="Renderer.php"/>
-        </dir>
-
-        <file role="php" name="GIS2.php"/>
-      </dir>
-    </filelist>
-    <deps>
-      <dep type="ext" rel="has">gd</dep>
-      <dep type="pkg" rel="has">Cache_Lite</dep>
-      <dep type="pkg" rel="has">Image_Color</dep>
-      <dep type="pkg" rel="has">XML_SVG</dep>
-    </deps>
-  </release>
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="GIS2">
+    <dir name="Parser">
+     <file baseinstalldir="Image" name="E00.php" role="php" />
+    </dir> <!-- //GIS2/Parser -->
+    <dir name="Renderer">
+     <file baseinstalldir="Image" name="GD.php" role="php" />
+     <file baseinstalldir="Image" name="SVG.php" role="php" />
+    </dir> <!-- //GIS2/Renderer -->
+    <file baseinstalldir="Image" name="LineSet.php" role="php" />
+    <file baseinstalldir="Image" name="Parser.php" role="php" />
+    <file baseinstalldir="Image" name="Renderer.php" role="php" />
+   </dir> <!-- //GIS2 -->
+   <file baseinstalldir="Image" name="GIS2.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>Cache_Lite</name>
+    <channel>pear.php.net</channel>
+   </package>
+   <package>
+    <name>Image_Color</name>
+    <channel>pear.php.net</channel>
+   </package>
+   <package>
+    <name>XML_SVG</name>
+    <channel>pear.php.net</channel>
+   </package>
+   <extension>
+    <name>gd</name>
+   </extension>
+  </required>
+ </dependencies>
+ <phprelease />
 </package>
