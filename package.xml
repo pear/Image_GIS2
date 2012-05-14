@@ -16,8 +16,14 @@ produce images using GD or Scalable Vector Graphics (SVG).</description>
   <email>jan@kneschke.de</email>
   <active>yes</active>
  </lead>
+ <lead>
+  <name>Daniel O&apos;Connor</name>
+  <user>doconnor</user>
+  <email>clockwerx@php.net</email>
+  <active>yes</active>
+ </lead>
  <date>2012-05-14</date>
- <time>21:11:55</time>
+ <time>21:18:18</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
