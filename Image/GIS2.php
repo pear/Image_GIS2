@@ -129,6 +129,11 @@ class Image_GIS2 {
     * @access public
     */
     public function addDataFile($dataFile, $color) {
+        if (!file_exists($dataFile)) {
+            throw new InvalidArgumentException(
+                "Data file '%s' does not exist.", $dataFile
+            );
+        }
         return $this->parser->addDataFile($dataFile, $color);
     }
 
