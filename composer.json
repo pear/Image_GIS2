@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "Image_GIS2": "./"
+            "Image": "./"
         }
     },
     "description": "More info available on: http://pear.php.net/package/Image_GIS2",
@@ -28,7 +28,8 @@
     },
     "type": "library",
     "require": {
-        "pear/pear_exception": "*"
+        "pear/pear_exception": "*",
+        "pear/cache_lite": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
