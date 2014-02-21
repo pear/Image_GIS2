@@ -1,0 +1,37 @@
+{
+    "authors": [
+        {
+            "email": "jan@kneschke.de",
+            "name": "Jan Kneschke",
+            "role": "Lead"
+        },
+        {
+            "email": "clockwerx@php.net",
+            "name": "Daniel O'Connor",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Image": "./"
+        }
+    },
+    "description": "More info available on: http://pear.php.net/package/Image_GIS2",
+    "include-path": [
+        "./"
+    ],
+    "license": "PHP License",
+    "name": "pear/image_gis2",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Image_GIS2",
+        "source": "https://github.com/pear/Image_GIS2"
+    },
+    "type": "library",
+    "require": {
+        "pear/pear_exception": "*",
+        "pear/cache_lite": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
